@@ -9,28 +9,26 @@ import java.util.Set;
 
 public class RemoveDuplicates {
 
-//  Pending
+  //  Pending
   private static void impl(int[] arr) {
     System.out.println("Ques: " + Arrays.toString(arr));
 
-    List<Integer> list = new ArrayList<>();
+    Set<Integer> integers = new HashSet<>();
 
-    for (int i = 0; i < arr.length-1; i++) {
-      if (!list.contains(arr[i])){
-        list.add(arr[i]);
+    int j = 0;
+    for (int i = 1; i < arr.length; i++) {
+
+      if (arr[i] != arr[j]) {
+        j++;
+        arr[j] = arr[i];
       }
-      list.add(0);
-
-    }
-    for (int i=0;i<list.size()-1;i++){
-      arr[i] = list.get(i);
     }
 
-    System.out.println(Arrays.toString(arr));
+    System.out.println("Unique elements: " + Arrays.toString(Arrays.copyOf(arr, j + 1)));
   }
 
   public static void main(String[] args) {
-impl(new int[]{1,2,3,1,2,5});
+    impl(new int[]{1, 2, 2, 3, 5});
   }
 
 }
