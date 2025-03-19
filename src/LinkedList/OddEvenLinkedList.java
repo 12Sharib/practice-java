@@ -6,9 +6,6 @@ public class OddEvenLinkedList {
     LinkedList linkedList = new LinkedList();
     linkedList.addLast(1);
     linkedList.addLast(2);
-    linkedList.addLast(3);
-    linkedList.addLast(4);
-    linkedList.addLast(5);
 
     linkedList.print();
     System.out.println();
