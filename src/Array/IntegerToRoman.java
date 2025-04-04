@@ -8,6 +8,7 @@ public class IntegerToRoman {
 
   private static void impl(int number) {
     System.out.println("Ques: " + number);
+//    Complex
     Map<Integer, String> map = new LinkedHashMap<>();
     map.put(1000, "M");
     map.put(900, "CM");
@@ -32,9 +33,23 @@ public class IntegerToRoman {
       }
     }
 
+//    Optimal
+    int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+    int i=0;
+    StringBuilder builder = new StringBuilder();
+    while (number >0 ){
+      if (number >= values[i]){
+        builder.append(symbols[i]);
+        number -= values[i];
+      }else{
+        i++;
+      }
+    }
 
 //    MMMDCCXLIX
-    System.out.println(stringBuilder);
+    System.out.println(builder.toString());
 
 
   }
