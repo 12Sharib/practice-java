@@ -13,29 +13,29 @@ public class PartitionList {
     LinkedList.Node slow = linkedList.head;
     LinkedList.Node fast = linkedList.head;
 
-    if(head == null){
-      return head;
-    }
-    ListNode less = new ListNode(-1);
-    ListNode headLess = less;
-
-    ListNode great = new ListNode(-1);
-    ListNode greatHead = great;
-
-
-    while(head!=null){
-      if(head.val < x){
-        less.next = new ListNode(head.val);
-        less = less.next;
-      }else{
-        great.next = new ListNode(head.val);
-        great = great.next;
-      }
-      head = head.next;
-    }
-    less.next = greatHead.next;
-
-    return headLess.next;
+//    if(head == null){
+//      return head;
+//    }
+//    ListNode less = new ListNode(-1);
+//    ListNode headLess = less;
+//
+//    ListNode great = new ListNode(-1);
+//    ListNode greatHead = great;
+//
+//
+//    while(head!=null){
+//      if(head.val < x){
+//        less.next = new ListNode(head.val);
+//        less = less.next;
+//      }else{
+//        great.next = new ListNode(head.val);
+//        great = great.next;
+//      }
+//      head = head.next;
+//    }
+//    less.next = greatHead.next;
+//
+//    return headLess.next;
 
 
   }
