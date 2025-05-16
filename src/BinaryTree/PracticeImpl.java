@@ -53,6 +53,27 @@ public class PracticeImpl {
 
       return sum;
     }
+
+    public boolean sumOfTarget(Node root, int target) {
+      int sum = 0;
+
+      return getSum(root, target, sum);
+
+    }
+
+    private boolean getSum(Node root, int target, int sum) {
+      if(root == null){
+        return false;
+      }
+      sum += root.data;
+      if (root.left == null && root.right == null){
+        return sum == target;
+      }
+      boolean l = getSum(root.left, target, sum);
+      boolean r = getSum(root.right, target, sum);
+
+      return l||r;
+    }
   }
 
   public static void main(String[] args) {
@@ -63,6 +84,8 @@ public class PracticeImpl {
     int total = binaryTree.countNodes(node);
 
     int totalSum = binaryTree.countSum(node);
+
+    boolean isExists = binaryTree.sumOfTarget(node, 22);
     System.out.println(totalSum);
 
 //
