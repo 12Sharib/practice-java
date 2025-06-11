@@ -6,25 +6,26 @@ import java.util.Map;
 
 public class LongestSubstringWithoutDuplicates {
 
-  private static void impl(String string){
-    System.out.println("Ques: " + string);
+  private static void impl(String s){
+    System.out.println("Ques: " + s);
 
-    int max = 0;
+    Map<Character, Integer> map = new HashMap<>();
+
     int l = 0;
     int r = 0;
+    int max = 0;
 
-    Map<Character, Integer>  map = new HashMap<>();
+    while (r < s.length()) {
+      if (map.containsKey(s.charAt(r)) && map.get(s.charAt(r))>=l ) {
 
-    while (r<string.length()){
-      if (map.containsKey(string.charAt(r))){
-        l = map.get(string.charAt(r)) + 1;
-      }else {
-        map.put(string.charAt(r), r);
+        l = map.get(s.charAt(r)) + 1;
+        map.put(s.charAt(r), r);
 
-        max = Math.max(max, r-l+1);
+      } else {
+        map.put(s.charAt(r), r);
+        max = Math.max(max, r - l + 1);
       }
       r++;
-
     }
 
 
@@ -32,7 +33,7 @@ public class LongestSubstringWithoutDuplicates {
   }
 
   public static void main(String[] args) {
-impl("tmmzuxt");
+impl("abcabcbb");
   }
 
 }
