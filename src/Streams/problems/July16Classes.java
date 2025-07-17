@@ -1,6 +1,5 @@
 package Streams.problems;
 
-import Streams.problems.July15Classes.Employee;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,6 +66,7 @@ public class July16Classes {
   }
 
   static class Order {
+
     private String customer;
     private String item;
     private String city;
@@ -77,9 +77,17 @@ public class July16Classes {
       this.city = city;
     }
 
-    public String getCustomer() { return customer; }
-    public String getItem() { return item; }
-    public String getCity() { return city; }
+    public String getCustomer() {
+      return customer;
+    }
+
+    public String getItem() {
+      return item;
+    }
+
+    public String getCity() {
+      return city;
+    }
   }
 
   private static void question1() {
@@ -137,7 +145,7 @@ public class July16Classes {
 
   }
 
-  private static void question3(){
+  private static void question3() {
 //   Return a Map<String, List<String>> — city → list of customers
 //  (no duplicates).
     List<Order> orders = List.of(
